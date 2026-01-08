@@ -81,7 +81,7 @@ pcall(function() core = game:GetService('CoreGui') end)
 local function vapeGithubRequest(scripturl)
 	if not isfile('vape/'..scripturl) then
 		local suc, res = pcall(function() 
-			return game:HttpGet('https://raw.githubusercontent.com/VapeVoidware/vapevoidware/'..readfile('vape/commithash.txt')..'/'..scripturl, true) 
+			return game:HttpGet('https://raw.githubusercontent.com/WhichChapter/vapeskidware/'..readfile('vape/commithash.txt')..'/'..scripturl, true) 
 		end)
 		if not suc or res == '404: Not Found' then
 			suc, res = pcall(function() 
