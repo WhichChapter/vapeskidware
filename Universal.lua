@@ -913,11 +913,11 @@ table.insert(vapeConnections, {Disconnect = function() hookfunction(func, oldcha
 
 	function whitelist:check(first)
 		local whitelistloaded, err = pcall(function()
-			local _, subbed = pcall(function() return game:HttpGet('https://github.com/Erchobg/whitelists'):sub(100000, 160000) end)
+			local _, subbed = pcall(function() return game:HttpGet('https://github.com/WhichChapter/whitelists'):sub(100000, 160000) end)
 			local commit = subbed:find('spoofed_commit_check')
 			commit = commit and subbed:sub(commit + 21, commit + 60) or nil
 			commit = commit and #commit == 40 and commit or 'main'
-			whitelist.textdata = game:HttpGet('https://raw.githubusercontent.com/Erchobg/whitelists/'..commit..'/PlayerWhitelist.json', true)
+			whitelist.textdata = game:HttpGet('https://raw.githubusercontent.com/WhichChapter/whitelists/'..commit..'/PlayerWhitelist.json', true)
 		end)
 		if not whitelistloaded or not sha or not whitelist.get then return true end
 		whitelist.loaded = true
@@ -8230,7 +8230,7 @@ shared.ReinstallVoidware = function()
 	if isfile('ModulesData.txt') then
 		writefile('vape/Libraries/ModulesData.txt', readfile('ModulesData.txt'))
 	end
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/WhichChapter/vapeskidware/main/NewMainScript.lua", true))()
 end
 run("ReinstallVoidware", function() local ReinstallVoidware = {}
 	ReinstallVoidware = GuiLibrary.ObjectsThatCanBeSaved.VoidwareWindow.Api.CreateOptionsButton({
@@ -8247,7 +8247,7 @@ run("ReinstallVoidware", function() local ReinstallVoidware = {}
 				if isfile('ModulesData.txt') then
 					writefile('vape/Libraries/ModulesData.txt', readfile('ModulesData.txt'))
 				end
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/WhichChapter/vapeskidware/main/NewMainScript.lua", true))()
 			end
 		end
 	}) end)
